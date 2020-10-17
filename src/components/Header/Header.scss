@@ -1,11 +1,11 @@
 .Header {
   width: 100%;
-  position: fixed;
+  position: absolute;
   z-index: 9;
   left: 0;
-  top: 5px;
+  top: 50px;
   .logo {
-    width: 50px;
+    width: 90px;
   }
   &__wrap {
     width: 100%;
@@ -20,7 +20,7 @@
     display: flex;
   }
   li {
-    margin-left: 25px;
+    margin-left: 72px;
   }
   a {
     font-size: 16px;

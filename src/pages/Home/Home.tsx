@@ -41,7 +41,7 @@ export const Home = () => {
                         <img src={banner2} alt="banner1" />
                         <div className="banner__content">
                             <div className="container">
-                                <h2>Sale of the spring collection</h2>
+                                <h2>You can cook this, if u try atleast</h2>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ export const Home = () => {
                         <img src={banner3} alt="banner1" />
                         <div className="banner__content">
                             <div className="container">
-                                <h2>Sale of the winter collection</h2>
+                                <h2>Fruit is the seed-bearing structure in flowering plants</h2>
                             </div>
                         </div>
                     </div>

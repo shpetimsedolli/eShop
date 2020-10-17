@@ -156,11 +156,11 @@
   left: auto;
 }
 .slick-prev:before {
-  content: "←";
+  content: url(../../images/arrow-left.svg);
 }
 .slick-next:before,
 [dir="rtl"] .slick-prev:before {
-  content: "→";
+  content: url(../../images/arrow-right.svg);
 }
 .slick-next {
   right: -25px;
@@ -170,7 +170,7 @@
   left: -25px;
 }
 [dir="rtl"] .slick-next:before {
-  content: "←";
+  content: url(../../images/arrow-left.svg);
 }
 .slick-dotted.slick-slider {
   margin-bottom: 30px;
