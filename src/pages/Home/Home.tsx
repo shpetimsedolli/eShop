@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { RouteComponentProps } from "react-router-dom";
 import Slider from "react-slick";
+import * as API from './../../api/api';
 
 //Components
 import { Contact } from '../../components/Contact/Contact';
+import { ProductBox } from '../../components/ProductBox/ProductBox';
 
 //styles
 import './Home.scss'
@@ -14,7 +17,6 @@ import arrival1 from '../../assets/images/arrival1.jpg'
 import arrival2 from '../../assets/images/arrival2.jpg'
 
 
-
 const settingsBanner = {
     dots: false,
     nav: true,
@@ -23,8 +25,47 @@ const settingsBanner = {
     slidesToShow: 1,
     slidesToScroll: 1
 };
+const settingsFavorite = {
+    dots: false,
+    nav: true,
+    infinite: false,
+    slidesToShow: 4,
+    slidesToScroll: 4
+};
+export interface StateProps {
+    loading: boolean;
+    food?: API.Hints[],
+    error?: string;
+}
 
 export const Home = () => {
+
+    const [state, setState] = useState<StateProps>({
+        loading: true,
+        food: [],
+        error: undefined
+    })
+
+    useEffect(() => {
+        loadFood();
+    }, [])
+
+    const loadFood = async () => {
+        try {
+            const res = await API.getFood()
+            setState({
+                ...state,
+                loading: false,
+                food: res.data?.hints
+            })
+        } catch (error) {
+            setState({
+                ...state,
+                loading: false,
+                error: error.message
+            })
+        }
+    }
     return (
         <div className="Home">
             <section className="block_section banner_section">
@@ -83,7 +124,29 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
-            <Contact />
-        </div >
+            <section className="block_section favorite_section">
+                <div className="container">
+                    <div className="main_title">
+                        <h3>Your Favorite</h3>
+                    </div>
+                    <div className="row has_gutter">
+                        {
+                            state.food?.map((foodItem: API.Hints) => {
+                                return (
+                                    <div className="column-3" key={foodItem.food.foodId}>
+                                        <ProductBox
+                                            id={foodItem.food.foodId}
+                                            title={foodItem.food.label}
+                                            price={foodItem.food.category}
+                                            image={foodItem.food.image}
+                                        />
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+            </section>
+        </div>
     )
 }
