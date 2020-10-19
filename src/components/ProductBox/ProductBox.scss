@@ -13,10 +13,20 @@
   }
   &__thumb {
     width: 100%;
+    margin-bottom: 30px;
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+  .ProductBox__content {
+    h4 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    span {
+      font-size: 20px;
     }
   }
 }

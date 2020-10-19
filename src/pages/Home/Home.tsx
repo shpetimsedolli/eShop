@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import * as API from './../../api/api';
 
 //Components
+import { Header } from '../../components/Header/Header';
+import { Footer } from '../../components/Footer/Footer';
 import { Contact } from '../../components/Contact/Contact';
 import { ProductBox } from '../../components/ProductBox/ProductBox';
 
@@ -47,7 +49,7 @@ export const Home = () => {
 
     useEffect(() => {
         loadFood();
-    }, [])
+    })
 
     const loadFood = async () => {
         try {
@@ -69,6 +71,7 @@ export const Home = () => {
     }
     return (
         <div className="Home">
+            <Header />
             <section className="block_section banner_section">
                 <Slider {...settingsBanner}>
                     <div className="banner">
@@ -133,7 +136,7 @@ export const Home = () => {
                     {
                         state.food?.slice(0, 1)?.map((foodItem: API.Hints) => {
                             return (
-                                <div className="favorite_slider">
+                                <div className="favorite_slider" key={foodItem.food.foodId}>
                                     <Slider {...settingsFavorite}>
                                         <div className="favorite_product_item">
                                             <ProductBox isBig
@@ -208,6 +211,7 @@ export const Home = () => {
                 </div>
             </section>
             <Contact />
+            <Footer />
         </div>
     )
 }

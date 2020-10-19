@@ -6,8 +6,7 @@ import {
 } from "react-router-dom";
 
 //Components
-import { Footer } from './components/Footer/Footer';
-import { Header } from './components/Header/Header';
+
 
 //Pages
 import { Home } from './pages/Home/Home';
@@ -21,13 +20,11 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Products" component={Products} />
           <Route component={ErrorPage} />
         </Switch>
-        <Footer />
       </Router>
     </div>
   );
