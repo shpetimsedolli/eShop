@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { RouteComponentProps } from "react-router-dom";
 import Slider from "react-slick";
 import * as API from './../../api/api';
 
@@ -52,7 +51,9 @@ export const Home = () => {
 
     const loadFood = async () => {
         try {
-            const res = await API.getFood()
+            const res = await API.getFood(
+
+            )
             setState({
                 ...state,
                 loading: false,
@@ -129,24 +130,84 @@ export const Home = () => {
                     <div className="main_title">
                         <h3>Your Favorite</h3>
                     </div>
-                    <div className="row has_gutter">
-                        {
-                            state.food?.map((foodItem: API.Hints) => {
-                                return (
-                                    <div className="column-3" key={foodItem.food.foodId}>
-                                        <ProductBox
-                                            id={foodItem.food.foodId}
-                                            title={foodItem.food.label}
-                                            price={foodItem.food.category}
-                                            image={foodItem.food.image}
-                                        />
-                                    </div>
-                                )
-                            })
+                    {
+                        state.food?.slice(0, 1)?.map((foodItem: API.Hints) => {
+                            return (
+                                <div className="favorite_slider">
+                                    <Slider {...settingsFavorite}>
+                                        <div className="favorite_product_item">
+                                            <ProductBox isBig
+                                                id={foodItem.food.foodId}
+                                                title={foodItem.food.label}
+                                                price={foodItem.food.category}
+                                                image={foodItem.food.image}
+                                            />
+                                        </div>
+                                        <div className="favorite_product_item">
+                                            <ProductBox isBig
+                                                id={foodItem.food.foodId}
+                                                title={foodItem.food.label}
+                                                price={foodItem.food.category}
+                                                image={foodItem.food.image}
+                                            />
+                                        </div>
+                                        <div className="favorite_product_item">
+                                            <ProductBox isBig
+                                                id={foodItem.food.foodId}
+                                                title={foodItem.food.label}
+                                                price={foodItem.food.category}
+                                                image={foodItem.food.image}
+                                            />
+                                        </div>
+                                        <div className="favorite_product_item">
+                                            <ProductBox isBig
+                                                id={foodItem.food.foodId}
+                                                title={foodItem.food.label}
+                                                price={foodItem.food.category}
+                                                image={foodItem.food.image}
+                                            />
+                                        </div>
+                                        <div className="favorite_product_item">
+                                            <ProductBox isBig
+                                                id={foodItem.food.foodId}
+                                                title={foodItem.food.label}
+                                                price={foodItem.food.category}
+                                                image={foodItem.food.image}
+                                            />
+                                        </div>
+                                        <div className="favorite_product_item">
+                                            <ProductBox isBig
+                                                id={foodItem.food.foodId}
+                                                title={foodItem.food.label}
+                                                price={foodItem.food.category}
+                                                image={foodItem.food.image}
+                                            />
+                                        </div>
+                                        <div className="favorite_product_item">
+                                            <ProductBox isBig
+                                                id={foodItem.food.foodId}
+                                                title={foodItem.food.label}
+                                                price={foodItem.food.category}
+                                                image={foodItem.food.image}
+                                            />
+                                        </div>
+                                        <div className="favorite_product_item">
+                                            <ProductBox isBig
+                                                id={foodItem.food.foodId}
+                                                title={foodItem.food.label}
+                                                price={foodItem.food.category}
+                                                image={foodItem.food.image}
+                                            />
+                                        </div>
+                                    </Slider>
+                                </div>
+                            )
                         }
-                    </div>
+                        )
+                    }
                 </div>
             </section>
+            <Contact />
         </div>
     )
 }
