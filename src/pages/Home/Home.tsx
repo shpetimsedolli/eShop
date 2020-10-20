@@ -31,7 +31,32 @@ const settingsFavorite = {
     nav: true,
     infinite: false,
     slidesToShow: 4,
-    slidesToScroll: 4
+    slidesToScroll: 4,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
 };
 export interface StateProps {
     loading: boolean;
@@ -103,7 +128,7 @@ export const Home = () => {
             <section className="block_section arrivals">
                 <div className="container">
                     <div className="row has_gutter">
-                        <div className="column-6">
+                        <div className="column-6 column-mob-12">
                             <div className="box">
                                 <div className="box__thumb">
                                     <img src={arrival1} alt="" />
@@ -114,7 +139,7 @@ export const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="column-6">
+                        <div className="column-6 column-mob-12">
                             <div className="box">
                                 <div className="box__thumb">
                                     <img src={arrival2} alt="" />

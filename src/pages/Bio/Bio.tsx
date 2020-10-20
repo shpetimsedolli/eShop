@@ -56,7 +56,7 @@ export const Bio = () => {
                         {
                             state.food?.slice(0, 16).map((foodItem: API.Hints) => {
                                 return (
-                                    <div className="column-3" key={foodItem.food.foodId}>
+                                    <div className="column-3 column-mob-12" key={foodItem.food.foodId}>
                                         <ProductBox
                                             id={foodItem.food.foodId}
                                             title={foodItem.food.label}

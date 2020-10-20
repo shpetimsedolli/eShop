@@ -33,3 +33,21 @@
     }
   }
 }
+@media only screen and (max-width: 767px) {
+  .main__wrapper {
+    flex-direction: column;
+    .main__wrapper__thumb {
+      margin-right: 0px;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+  .main__wrapper {
+    .main__wrapper__thumb {
+      margin-right: 30px;
+    }
+    .main__wrapper__content {
+      max-width: 290px;
+    }
+  }
+}
