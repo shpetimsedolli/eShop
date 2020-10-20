@@ -10,9 +10,10 @@ import {
 
 //Pages
 import { Home } from './pages/Home/Home';
-import { Products } from './pages/Products/Products';
+import { Favorites } from './pages/Favorites/Favorites';
 import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 import { Bio } from './pages/Bio/Bio';
+import { Product } from './pages/Product/Product';
 
 //Styles
 import './App.scss';
@@ -23,8 +24,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/Products" component={Products} />
+          <Route exact path="/Favorites" component={Favorites} />
           <Route exact path="/Bio" component={Bio} />
+          <Route exact path="/product/:id" component={Product} />
           <Route component={ErrorPage} />
         </Switch>
       </Router>

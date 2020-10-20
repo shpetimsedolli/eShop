@@ -17,7 +17,7 @@ export const Header = () => {
                     <nav className="nav_wrapper">
                         <ul>
                             <li><Link to="/">Main</Link></li>
-                            <li><Link to="/Products">Food</Link></li>
+                            <li><Link to="/Favorites">Food</Link></li>
                             <li><Link to="/Bio">Bio</Link></li>
                         </ul>
                     </nav>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Slider from "react-slick";
-import * as API from './../../api/api';
+import * as API from '../../api/api';
 
 //Components
 import { AnotherHeader } from '../../components/AnotherHeader/AnotherHeader';
@@ -9,7 +9,7 @@ import { Contact } from '../../components/Contact/Contact';
 import { ProductBox } from '../../components/ProductBox/ProductBox';
 
 //styles
-import "./Products.scss";
+import "./Favorites.scss";
 
 import mainimage from '../../assets/images/main-image.jpg'
 
@@ -52,7 +52,7 @@ export interface StateProps {
     error?: string;
 }
 
-export const Products = () => {
+export const Favorites = () => {
     const [state, setState] = useState<StateProps>({
         loading: true,
         food: [],
@@ -82,7 +82,7 @@ export const Products = () => {
         }
     }
     return (
-        <div className="Products">
+        <div className="Favorites">
             <AnotherHeader />
             <section className="block_section main">
                 <div className="container">
