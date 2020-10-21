@@ -5,10 +5,6 @@ import './Product.scss';
 
 interface Props extends RouteComponentProps { }
 
-interface ParamsProps {
-    id?: number
-}
-
 interface StateProps {
     loading: boolean;
     food?: API.Hints[],
@@ -16,8 +12,6 @@ interface StateProps {
 }
 
 export const Product = (props: Props) => {
-    const { id }: ParamsProps = props?.match?.params
-
     const [state, setState] = useState<StateProps>({
         loading: true,
         food: undefined,
@@ -29,9 +23,6 @@ export const Product = (props: Props) => {
 
     const loadFood = async () => {
         try {
-            if (!id) {
-                return;
-            }
             const res = await API.getFood()
             setState({
                 ...state,
@@ -46,15 +37,19 @@ export const Product = (props: Props) => {
             })
         }
     }
-    console.log("food", state.food)
+    console.log("food", state.food);
     return (
         <div className="Product">
             <div className="container">
-                <div className="row has_gutter">
-                    <div className="column-6">
-
-                    </div>
-                </div>
+                {state.food?.map((food: API.Hints) => {
+                    return (
+                        <div className="row has_gutter">
+                            <div className="column-6">
+                                <img src={food.food.image} alt="" />
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )

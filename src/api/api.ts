@@ -49,6 +49,7 @@ export interface AxiosResposne {
     data?: any;
     error?: any;
 }
+
 export const getFood = async () => {
     return await axios.get<undefined, ResponseFoodProps>('');
 }

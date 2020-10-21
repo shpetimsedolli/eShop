@@ -16,7 +16,7 @@ export interface Props {
 export const ProductBox = (props: Props) => {
     return (
         <div className={`ProductBox ${props.isBig ? 'ProductBox--big' : 'ProductBox--small'}`}>
-            <Link to={`/product/${props.id}`}>
+            <Link className="link" to={`/product/${props.id}`}>
                 <div className="ProductBox__thumb">
                     <img src={props.image ? props.image : empty} alt={props.title} />
                 </div>

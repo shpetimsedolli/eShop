@@ -38,6 +38,9 @@
     flex-direction: column;
     .main__wrapper__thumb {
       margin-right: 0px;
+      img {
+        height: unset;
+      }
     }
   }
 }

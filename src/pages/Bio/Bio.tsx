@@ -28,9 +28,7 @@ export const Bio = () => {
 
     const loadFood = async () => {
         try {
-            const res = await API.getFood(
-
-            )
+            const res = await API.getFood()
             setState({
                 ...state,
                 loading: false,
