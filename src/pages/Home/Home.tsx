@@ -66,8 +66,6 @@ export interface StateProps {
 
 export const Home = () => {
 
-
-
     const [state, setState] = useState<StateProps>({
         loading: true,
         food: [],

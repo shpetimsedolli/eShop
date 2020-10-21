@@ -1,0 +1,30 @@
+.Product {
+  width: 100%;
+
+  &--big {
+    .Product__thumb {
+      height: 385px;
+    }
+  }
+  &--small {
+    .Product__thumb {
+      height: 272px;
+    }
+  }
+  &__thumb {
+    margin-bottom: 30px;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .Product__content {
+    h4 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    span {
+      font-size: 20px;
+    }
+  }
+}
