@@ -4,6 +4,8 @@ import * as API from './../../api/api';
 
 import './Product.scss';
 
+import { HomeButton } from '../../components/HomeButton/HomeButton'
+
 import empty from '../../assets/images/empty.jpg';
 
 interface Props extends RouteComponentProps { }
@@ -60,6 +62,7 @@ export const Product = (props: Props) => {
                                 <h4>{food.food.foodId}</h4>
                                 <span>{food.food.categoryLabel}</span>
                             </div>
+                            <HomeButton />
                         </div>
                     )
 
